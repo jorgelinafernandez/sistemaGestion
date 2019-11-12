@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<div class="container-fluid noventa">
+    <h2>Clientes de Conesa Inc.</h2>
+    <p>En la base existen {{clients|length}} clientes.</p>
+
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Pais</th>
+            <th scope="col">Documento</th>
+            <th scope="col">Fecha Alta</th>
+            <th scope="col">Correo Electronico</th>
+            <th scope="col">Trabajo</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+          <tr>
+            <td>{{ client.name }}</td>
+            <td>{{ client.age }}</td>
+            <td>{{ client.address }}</td>
+            <td>{{ client.country }}</td>
+            <td>{{ client.dni }}</td>
+            <td>{{ client.entry_date }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.job }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
